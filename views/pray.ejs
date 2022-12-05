@@ -1,0 +1,381 @@
+<%- include('template/head.ejs') %> <%- include('template/nav.ejs') %>
+<div class="mt-md-5" style="margin-top: 55px">
+  <div
+    class="position-absolute calendar-hide"
+    style="width: 100%; height: 1500px; z-index: 1"
+    id="calendar-back"
+  >
+    s
+  </div>
+  <div class="mt-md-0 pb-md-5" style="background-color: #e9eae3">
+    <div class="row justify-content-center">
+      <div class="col">
+        <h1 class="mt-md-5 fw-bold text-center">WAKTU SHOLAT</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 mt-md-4 text-center">
+        <p>
+          Makkah selalu berusaha untuk memberikan waktu Sholat paling akurat
+          untuk anda
+        </p>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+  <div class="container mt-md-5" style="margin-top: 2rem">
+    <div class="mt-md-0" style="background-color: #bec699; height: 20rem">
+      <div class="row text-center">
+        <h4 class="fw-bold mt-md-4">
+          Waktu Sholat dan Arah Kiblat di
+          <span class="cities" class="fw-bold mt-md-4"></span>
+          Hari Ini
+        </h4>
+      </div>
+      <div class="row mt-md-3" style="margin-top: 2rem">
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+          <div class="dropdown row">
+            <ul class="list-unstyled d-flex">
+              <li class="col-md-1">
+                <div class="px-md-0">
+                  <span
+                    class="input-group-text px-md-0 justify-content-center rounded py-md-1"
+                    style="padding-top: 2px"
+                    id="basic-addon1"
+                    ><img src="maps-pin.png" alt="map-pin" width="30px;"
+                  /></span>
+                </div>
+              </li>
+              <li class="col-md-11">
+                <div class="px-md-0">
+                  <input
+                    class="dropdown-toggle py-md-2 w-100 px-md-0 form-control"
+                    id="search-input"
+                    type="text"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  />
+                  <ul
+                    class="dropdown-menu city-menu"
+                    style="max-height: 200px; overflow-y: scroll"
+                  >
+                    <div
+                    style="margin: 0 auto; z-index: 1; width: max-content;"
+                    id="loading-search"
+                    class="element-hide"
+                    >
+                      <img src="loading.svg" alt="loading" />
+                    </div>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row mt-md-5 justify-content-center" style="margin-top: 2rem">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center" id="subuh-today">Subuh</h5>
+                  <h6 class="card-text text-center" id="subuh-time-today"></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center" id="terbit-today">
+                    Terbit
+                  </h5>
+                  <h6 class="card-text text-center" id="terbit-time-today"></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center" id="dzuhur-today">
+                    Dzuhur
+                  </h5>
+                  <h6 class="card-text text-center" id="dzuhur-time-today"></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center" id="ashar-today">Ashar</h5>
+                  <h6 class="card-text text-center" id="ashar-time-today"></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center" id="maghrib-today">
+                    Maghrib
+                  </h5>
+                  <h6
+                    class="card-text text-center"
+                    id="maghrib-time-today"
+                  ></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center" id="isya-today">Isya</h5>
+                  <h6 class="card-text text-center" id="isya-time-today"></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container mt-md-5"
+    style="
+      margin-top: 25rem;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 5px;
+    "
+  >
+    <div class="row" style="background-color: #8b9854; color: white">
+      <ul class="list-unstyled d-flex">
+        <li
+          class="col-md-8 align-items-center ps-md-2"
+          style="padding-top: 10px"
+        >
+          <h5 class="fw-bold mt-md-2 ms-md-5">
+            <span class="cities" class="fw-bold mt-md-4"></span>
+          </h5>
+        </li>
+        <li
+          class="col-md-2 align-items-center"
+          style="padding-left: 20px; padding-top: 10px"
+        >
+          <h5 class="fw-bold mt-md-2" id="month-header"></h5>
+        </li>
+        <li
+          class="col-md-2 align-items-center"
+          style="padding-left: 20px; padding-top: 10px"
+        >
+          <div class="mt-md-2 ms-md-5 align-items-center" style="width: 2rem">
+            <svg
+              id="date-pickers"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              fill="currentColor"
+              class="bi bi-calendar-date"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"
+              />
+              <path
+                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+              />
+            </svg>
+            <div
+              class="position-absolute mt-md-4 calendar-hide"
+              style="color: black; right: 5%; z-index: 2"
+              id="date-picker"
+            >
+              <div class="card" style="width: 18rem">
+                <div class="card-body">
+                  <input type="hidden" id="user-city" />
+                  <ul class="list-unstyled text-center">
+                    <li>
+                      <ul class="list-unstyled">
+                        <li class="py-md-3 pt-md-0">
+                          <h5
+                            class="border border-2 py-md-1"
+                            style="border-radius: 20px"
+                          >
+                            Year
+                          </h5>
+                          <div class="dropdown">
+                            <input
+                              class="btn btn-secondary dropdown-toggle"
+                              type="text"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                              id="year-selected"
+                            />
+                            <ul class="dropdown-menu">
+                              <% for(let i=2022;i<=2023;i++) {%>
+                              <li>
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="year_select('<%= i %>')"
+                                  ><%= i %></a
+                                >
+                              </li>
+                              <% } %>
+                            </ul>
+                          </div>
+                        </li>
+                        <li style="padding-top: 20px">
+                          <h5
+                            class="border border-2 py-md-1"
+                            style="border-radius: 20px"
+                          >
+                            Month
+                          </h5>
+                          <div class="dropdown">
+                            <input
+                              class="btn btn-secondary dropdown-toggle"
+                              type="text"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                              id="month-selected"
+                            />
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('Januari')"
+                                  >Januari</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('February')"
+                                  >February</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('Maret')"
+                                  >Maret</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('April')"
+                                  >April</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('Mei')"
+                                  >Mei</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('Juni')"
+                                  >Juni</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('July')"
+                                  >July</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('Agustus')"
+                                  >Agustus</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('September')"
+                                  >September</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('Oktober')"
+                                  >Oktober</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('November')"
+                                  >November</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  style="cursor: pointer"
+                                  onclick="month_select('Desember')"
+                                  >Desember</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="row text-center ps-md-5"
+      id="monthly-pray-calendar"
+      style="align-items: center"
+    >
+      <div
+      style="margin: 0 auto; z-index: 1; width: max-content;"
+      id="loading"
+      >
+        <img src="loading.svg" alt="loading" />
+      </div>
+    </div>
+  </div>
+  <div class="mt-md-0" style="padding-top: 2rem">
+    <div
+      class="d-flex mt-md-5 justify-content-between"
+      style="background-color: #f2f2f2"
+    >
+      <div class="p-2 mt-md-4">
+        <a
+          href="https://github.com/Ilham-Darmawan"
+          class="fw-bold p-2"
+          style="text-decoration: none; color: black"
+          >Github</a
+        >
+        <a
+          href="https://www.linkedin.com/in/muhamad-ilham-darmawan-94a085221/"
+          class="fw-bold p-2"
+          style="text-decoration: none; color: black"
+          >Linkedin</a
+        >
+      </div>
+      <div class="p-2 mt-md-4">
+        <p class="fw-bold me-md-5">© 2022 Alright Reserved</p>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('template/footer.ejs') %>
+<script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"
+></script>
+
+<script src="js/calendar.js"></script>

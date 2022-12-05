@@ -1,0 +1,48 @@
+#about-us-head {
+    background-image: url('bg-islamic.jpg');
+    background-size: cover;
+}
+
+@font-face {
+    font-family: 'noorehidayat';
+    src: url('font/noorehidayat.eot');
+    src: url('font/noorehidayat.eot?#iefix') format('embedded-opentype'),
+        url('font/noorehidayat.woff2') format('woff2'),
+        url('font/noorehidayat.woff') format('woff'),
+        url('font/noorehidayat.ttf') format('truetype'),
+        url('font/noorehidayat.svg#noorehidayat') format('svg');
+
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.arabic {
+    font-family: 'noorehidayat';
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0%;
+    }
+}
+
+.fadein-animation {
+    animation: fadeIn 2s;
+}
+
+@media only screen and (max-width: 1300px) {
+    #features-home {
+        display: none;
+    }
+}
+
+#loading-result-quran {
+    transform: scale(2);
+}

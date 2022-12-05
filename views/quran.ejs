@@ -1,0 +1,86 @@
+<%- include('template/head.ejs') %> <%- include('template/nav.ejs') %>
+<div class="mt-md-5 pt-md-4" style="margin-top: 90px">
+  <div class="row mt-md-3">
+    <div class="col-md-3 text-center">
+      <h3 class="mt-md-2" style="padding-top: 1rem">Search</h3>
+      <input
+        class="form-control mt-md-3 ms-md-2"
+        id="search-surah"
+        type="search"
+        placeholder="Ketik Nama Surat"
+        aria-label="Search"
+      />
+      <div
+        class="card ms-md-2 w-100 mt-md-5 element-hide"
+        id="search-result"
+        style="max-height: 10rem; overflow-y: scroll"
+      >
+        <h4>Result</h4>
+        <div class="card-body" id="search-result-list">
+          <img src="loading.svg" alt="loading" class="element-hide" id="loading-result-quran">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="card w-100" style="color: black">
+        <div
+          class="card-body"
+          style="
+            min-height: 34rem;
+            max-height: 34 rem;
+            background-color: white;
+            padding: 0;
+          "
+        >
+          <div
+            style="margin: 0 auto; z-index: 1; width: max-content"
+            class="element-hide"
+            id="loading"
+          >
+            <img src="loading.svg" alt="loading" />
+          </div>
+          <h5
+            class="card card-title text-center quran-title"
+            style="font-size: 2rem"
+          ></h5>
+          <div
+            class="mt-md-2"
+            id="quran"
+            style="max-height: 34rem; overflow-y: scroll"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-md-0" style="padding-top: 2rem">
+    <div
+      class="d-flex mt-md-5 justify-content-between"
+      style="background-color: #f2f2f2"
+    >
+      <div class="p-2 mt-md-4">
+        <a
+          href="https://github.com/Ilham-Darmawan"
+          class="fw-bold p-2"
+          style="text-decoration: none; color: black"
+          >Github</a
+        >
+        <a
+          href="https://www.linkedin.com/in/muhamad-ilham-darmawan-94a085221/"
+          class="fw-bold p-2"
+          style="text-decoration: none; color: black"
+          >Linkedin</a
+        >
+      </div>
+      <div class="p-2 mt-md-4">
+        <p class="fw-bold me-md-5">© 2022 Alright Reserved</p>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('template/footer.ejs') %>
+<script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"
+></script>
+<script src="js/quran.js"></script>
